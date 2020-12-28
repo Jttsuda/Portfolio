@@ -1,11 +1,13 @@
-let scene = document.querySelectorAll('.scene');
-let nightScene = document.querySelector('.night');
-let dayScene = document.querySelector('.day');
+const nightScene = document.querySelector('.night');
+const dayScene = document.querySelector('.day');
+const themeBtnBar = document.getElementById('theme-btn-bar');
+const themeBtn = document.getElementById('theme-btn');
+const themeIcon = document.getElementById('theme-icon');
 
 
 // Rendering Stars
 function stars(){
-    for (let i=0; i<700; i++){
+    for (let i=0; i<200; i++){
         let star = document.createElement("i");
         let x = Math.floor(Math.random() * window.innerWidth);
         let y = Math.floor(Math.random() * window.innerHeight);
@@ -26,6 +28,9 @@ function stars(){
 // Rendering Current Theme
 let setTheme = localStorage.getItem('theme');
 if (setTheme === 'light'){
+    themeBtn.style.left = "21px";
+    themeBtn.style.backgroundColor = "#5a0012";
+    themeIcon.src = "/icons/sun-regular.png";
     nightScene.style.opacity = '0';
     dayScene.style.opacity = '1';
 } else {
@@ -33,10 +38,24 @@ if (setTheme === 'light'){
 }
 
 
+// Theme Button Slide
+themeBtnBar.addEventListener('click', slideBtn);
+function slideBtn(){
+    if (themeBtn.style.left === "-1px"){
+        themeBtn.style.left = "21px";
+        themeBtn.style.backgroundColor = "#5a0012";
+        themeIcon.src = "/icons/sun-regular.png";
+    } else {
+        themeBtn.style.left = "-1px";
+        themeIcon.src = "/icons/moon-regular.png";
+        themeBtn.style.backgroundColor = "";
+    }
+    changeTime();
+}
+
+
 // Change Light/Dark Theme
-scene.forEach(x=> x.addEventListener('click', changeTime));
 function changeTime(){
-    
     let currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark' || currentTheme === null){
         localStorage.setItem('theme', 'light');

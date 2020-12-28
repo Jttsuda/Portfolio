@@ -74,6 +74,7 @@ Footer
   background-color: var(--main-nav-color);
   color: var(--nav-text-hover);
   font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -83,14 +84,40 @@ Footer
 }
 #footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 60%;
   height: 100%;
-  transform: translateX(-15%);
+  margin: auto;
 }
 .copyright {
   pointer-events: none;
   margin-right: 10px;
+}
+
+/* Change Theme Button */
+#theme-btn-bar {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 20px;
+  background-color: #505050;
+  border-radius: 20px;
+  box-shadow: 2px 2px 7px #000 inset;
+}
+#theme-btn {
+  position: absolute;
+  top: -5px;
+  width: 30px;
+  height: 30px;
+  background-color: #301934;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+#theme-icon {
+  height: 15px;
+  width: 15px;
+  transform: translate(7.5px, 7.5px);
 }
 
 /* 
@@ -111,7 +138,8 @@ Light/Dark Theme
 
 /* Night Mode */
 .night {
-  background: linear-gradient(#111425, #121e61);
+  /* background: linear-gradient(#111425, #030822); */
+  background: linear-gradient(#020413, #050505);
 }
 
 .night i {
@@ -139,11 +167,12 @@ Light/Dark Theme
 
 /* Day Mode */
 .day {
-  background: linear-gradient(#b0b7db, #5b6dd4);
+  background: linear-gradient(#b0b0b0, #f0f0f0);
 }
 
 .hills {
   pointer-events: none;
+  user-select: none;
   position: fixed;
   bottom: 0px;
   left: 0px;
