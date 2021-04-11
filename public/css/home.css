@@ -1,0 +1,20 @@
+#moon-container {
+  width: fit-content;
+  transform: translate(40px, 40px) rotate(-30deg);
+}
+#moon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+#eclipse {
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #020413;
+}

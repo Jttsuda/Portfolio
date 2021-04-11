@@ -59,6 +59,7 @@ function changeTime(){
     let currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark' || currentTheme === null){
         localStorage.setItem('theme', 'light');
+        document.getElementById('moon-container').style.display = 'none';
         nightScene.style.opacity = '0';
         dayScene.style.opacity = '1';
     
@@ -70,6 +71,11 @@ function changeTime(){
 
     } else if (currentTheme === 'light'){
         localStorage.setItem('theme', 'dark');
+        
+        setTimeout(() => {
+            document.getElementById('moon-container').style.removeProperty('display');
+        }, 2000);
+
         nightScene.style.opacity = '1';
         dayScene.style.opacity = '0';
         stars();
