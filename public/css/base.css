@@ -94,6 +94,11 @@ Footer
   margin-right: 10px;
 }
 
+/* 
+=======================================
+Dark and Light Theme Styles/Animations
+=======================================
+*/
 /* Change Theme Button */
 #theme-btn-bar {
   cursor: pointer;
@@ -107,9 +112,10 @@ Footer
 #theme-btn {
   position: absolute;
   top: -5px;
+  left: 21px;
   width: 30px;
   height: 30px;
-  background-color: #301934;
+  background-color: #5a0012;
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -118,12 +124,6 @@ Footer
   width: 15px;
   transform: translate(7.5px, 7.5px);
 }
-
-/* 
-=======================================
-Dark and Light Theme Styles/Animations
-=======================================
-*/
 .scene {
   position: absolute;
   top: 0px;

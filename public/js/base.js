@@ -32,14 +32,13 @@ if (setTheme === null) {
     localStorage.setItem('theme', 'light');
     setTheme = 'light';
 }
-if (setTheme === 'light'){
+if (setTheme === 'dark'){
     themeBtn.style.left = "21px";
-    themeBtn.style.backgroundColor = "#5a0012";
-    themeIcon.src = "/icons/sun-regular.png";
-    nightScene.style.opacity = '0';
-    crescentMoon.style.display = 'none';
-    dayScene.style.opacity = '1';
-} else {
+    themeBtn.style.backgroundColor = "#301934";
+    themeIcon.src = "/icons/moon-regular.png";
+    nightScene.style.opacity = '1';
+    dayScene.style.opacity = '0';
+    crescentMoon.style.display = 'initial';
     renderStars();
 }
 
@@ -49,19 +48,19 @@ themeBtnBar.addEventListener('click', slideBtn);
 function slideBtn(){
     if (themeBtn.style.left === "-1px"){
         themeBtn.style.left = "21px";
-        themeBtn.style.backgroundColor = "#5a0012";
-        themeIcon.src = "/icons/sun-regular.png";
+        themeBtn.style.backgroundColor = "#301934";
+        themeIcon.src = "/icons/moon-regular.png";
     } else {
         themeBtn.style.left = "-1px";
-        themeIcon.src = "/icons/moon-regular.png";
+        themeIcon.src = "/icons/sun-regular.png";
         themeBtn.style.backgroundColor = "";
     }
-    changeTime();
+    toggleTheme();
 }
 
 
 // Change Light/Dark Theme
-function changeTime(){
+function toggleTheme(){
     let currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark'){
         localStorage.setItem('theme', 'light');
