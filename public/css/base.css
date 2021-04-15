@@ -3,22 +3,21 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
-/* Variables */
 :root {
   --main-nav-color: #050505;
   --nav-text-color: white;
   --nav-text-hover: #909090;
+  --nav-height: 70px;
 }
 
 /*
 =================
-Navigation
+Header (Navigation)
 =================
 */
 #nav-bar {
   background-color: var(--main-nav-color);
-  height: 70px;
+  height: var(--nav-height);
   width: 100%;
 }
 #nav-container {
@@ -121,9 +120,9 @@ Footer
 }
 
 /* 
-=================
-Light/Dark Theme
-=================
+=======================================
+Dark and Light Theme Styles/Animations
+=======================================
 */
 .scene {
   position: absolute;
@@ -136,11 +135,10 @@ Light/Dark Theme
   z-index: -1;
 }
 
-/* Night Mode */
+/* Dark Theme */
 .night {
   background: linear-gradient(#020413, #050505);
 }
-
 .night i {
   position: absolute;
   background-color: #fff;
@@ -148,7 +146,6 @@ Light/Dark Theme
   transition: background-color 1s;
   animation: animate linear infinite;
 }
-
 @keyframes animate {
   0% {
     opacity: 0;
@@ -163,12 +160,34 @@ Light/Dark Theme
     transform: translate(100px, -60px);
   }
 }
+#moon-container {
+  position: absolute;
+  top: calc(var(--nav-height) + 20px);
+  left: 20px;
+  width: fit-content;
+  transform: rotate(-30deg);
+}
+#moon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+}
+#eclipse {
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #020413;
+}
 
-/* Day Mode */
+/* Light Theme */
 .day {
   background: linear-gradient(#b0b0b0, #f0f0f0);
 }
-
 .hills {
   pointer-events: none;
   user-select: none;

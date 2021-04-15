@@ -13,13 +13,13 @@ app.listen(PORT, 'localhost', () => {
 
 
 // Middleware/Static Files
-app.use(express.static('public'));//Setting up Static Files
+app.use(express.static('./public'));//Setting up Static Files
 app.use(express.json());//Auth for req.body
 app.use(express.urlencoded({ extended: true }));//Accepting Form Data
 
 
 // Routes
-app.get('/', (req, res) => res.render('home'));
+app.get('/', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('about'));
 app.get('/projects', (req, res) => res.render('projects'));
 app.get('/contact', (req, res) => res.render('contact'));

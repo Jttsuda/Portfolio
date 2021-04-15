@@ -3,10 +3,11 @@ const dayScene = document.querySelector('.day');
 const themeBtnBar = document.getElementById('theme-btn-bar');
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');
+const crescentMoon = document.getElementById('moon-container');
 
 
 // Rendering Stars
-function stars(){
+function renderStars(){
     for (let i=0; i<200; i++){
         let star = document.createElement("i");
         let x = Math.floor(Math.random() * window.innerWidth);
@@ -24,17 +25,22 @@ function stars(){
     }
 }
 
-//test
+
 // Rendering Current Theme
 let setTheme = localStorage.getItem('theme');
+if (setTheme === null) {
+    localStorage.setItem('theme', 'light');
+    setTheme = 'light';
+}
 if (setTheme === 'light'){
     themeBtn.style.left = "21px";
     themeBtn.style.backgroundColor = "#5a0012";
     themeIcon.src = "/icons/sun-regular.png";
     nightScene.style.opacity = '0';
+    crescentMoon.style.display = 'none';
     dayScene.style.opacity = '1';
 } else {
-    stars();
+    renderStars();
 }
 
 
@@ -57,9 +63,9 @@ function slideBtn(){
 // Change Light/Dark Theme
 function changeTime(){
     let currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark' || currentTheme === null){
+    if (currentTheme === 'dark'){
         localStorage.setItem('theme', 'light');
-        document.getElementById('moon-container').style.display = 'none';
+        crescentMoon.style.display = 'none';
         nightScene.style.opacity = '0';
         dayScene.style.opacity = '1';
     
@@ -73,12 +79,12 @@ function changeTime(){
         localStorage.setItem('theme', 'dark');
         
         setTimeout(() => {
-            document.getElementById('moon-container').style.removeProperty('display');
+            crescentMoon.style.removeProperty('display');
         }, 2000);
 
         nightScene.style.opacity = '1';
         dayScene.style.opacity = '0';
-        stars();
+        renderStars();
     }
 
 }
