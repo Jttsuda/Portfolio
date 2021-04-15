@@ -6,10 +6,8 @@ app.set('view engine', 'ejs');
 
 
 // Listening for Requests
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, 'localhost', () => {
-    console.log(`Server running on port ${PORT}`)
-})
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 
 // Middleware/Static Files
