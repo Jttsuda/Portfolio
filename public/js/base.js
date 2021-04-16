@@ -7,21 +7,23 @@ const themeIcon = document.getElementById('theme-icon');
 
 // Rendering Stars
 function renderStars(){
-    for (let i=0; i<200; i++){
-        let star = document.createElement("i");
-        let x = Math.floor(Math.random() * window.innerWidth);
-        let y = Math.floor(Math.random() * window.innerHeight);
-        let duration = Math.random() * 10;
-        let size = Math.random() * 2;
-
-        star.style.left = x+'px';
-        star.style.top = y+'px';
-        star.style.width = 1+size+'px';
-        star.style.height = 1+size+'px';
-        star.style.animationDuration = 7+duration+'s';
-
-        nightScene.appendChild(star);
-    }
+    setTimeout(() => {
+        for (let i=0; i<200; i++){
+            let star = document.createElement("i");
+            let x = Math.floor(Math.random() * window.innerWidth);
+            let y = Math.floor(Math.random() * window.innerHeight);
+            let duration = Math.random() * 10;
+            let size = Math.random() * 2;
+    
+            star.style.left = x+'px';
+            star.style.top = y+'px';
+            star.style.width = 1+size+'px';
+            star.style.height = 1+size+'px';
+            star.style.animationDuration = 7+duration+'s';
+    
+            nightScene.appendChild(star);
+        }
+    }, 0);
 }
 
 
@@ -64,7 +66,7 @@ function toggleTheme(){
         localStorage.setItem('theme', 'light');
         nightScene.style.opacity = '0';
         dayScene.style.opacity = '1';
-        
+
         // Removing Stars
         let stars = document.querySelectorAll('.night i');
         stars.forEach(star => star.style.backgroundColor = 'rgba(0,0,0,0)');
