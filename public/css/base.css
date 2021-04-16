@@ -160,39 +160,8 @@ Dark and Light Theme Styles/Animations
     transform: translate(100px, -60px);
   }
 }
-/* #moon-container {
-  position: absolute;
-  top: calc(var(--nav-height) + 20px);
-  left: 20px;
-  width: fit-content;
-  transform: rotate(-30deg);
-}
-#moon {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #b0b0b0;
-}
-#eclipse {
-  position: absolute;
-  top: 0px;
-  right: -20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #020413;
-} */
 
 /* Light Theme */
 .day {
   background: linear-gradient(#b0b0b0, #f0f0f0);
-}
-.hills {
-  pointer-events: none;
-  user-select: none;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
 }

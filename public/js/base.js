@@ -3,7 +3,6 @@ const dayScene = document.querySelector('.day');
 const themeBtnBar = document.getElementById('theme-btn-bar');
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');
-// const crescentMoon = document.getElementById('moon-container');
 
 
 // Rendering Stars
@@ -38,7 +37,6 @@ if (setTheme === 'dark'){
     themeIcon.src = "/icons/moon-regular.png";
     nightScene.style.opacity = '1';
     dayScene.style.opacity = '0';
-    // crescentMoon.style.display = 'initial';
     renderStars();
 }
 
@@ -64,10 +62,10 @@ function toggleTheme(){
     let currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark'){
         localStorage.setItem('theme', 'light');
-        // crescentMoon.style.display = 'none';
         nightScene.style.opacity = '0';
         dayScene.style.opacity = '1';
-    
+        
+        // Removing Stars
         let stars = document.querySelectorAll('.night i');
         stars.forEach(star => star.style.backgroundColor = 'rgba(0,0,0,0)');
         setTimeout(() => {
@@ -76,11 +74,6 @@ function toggleTheme(){
 
     } else if (currentTheme === 'light'){
         localStorage.setItem('theme', 'dark');
-        
-        // setTimeout(() => {
-        //     crescentMoon.style.removeProperty('display');
-        // }, 2000);
-
         nightScene.style.opacity = '1';
         dayScene.style.opacity = '0';
         renderStars();

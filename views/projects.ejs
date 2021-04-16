@@ -1,7 +1,22 @@
 <%- include('./partials/header.ejs') %>
 <link rel="stylesheet" href="/css/projects.css">
 
-<h1 style="text-align: center;">Projects</h1>
+<!-- Tetris -->
+<div class="project-div">
+    <a href=""><img src="/images/tetris.png" alt="Tetris IMG" class="project-img"></a>
+    <div id="tetris-label" class="project-label-div">
+        <h2>Created Using HTML, CSS, and Vanilla Javascript. Consists of a play/pause button and a scoreboard, as well as small window displaying the next piece in line.</h2>
+    </div>
+</div>
+
+<!-- Snake -->
+<div class="project-div">
+    <div id="snake-label" class="project-label-div">
+        <h2>Created Using HTML, CSS, and Vanilla Javascript. Consists of a play/pause button, current score, personal best, and a new game button.</h2>
+    </div>
+    <a href=""><img src="/images/snake.png" alt="Snake IMG" class="project-img"></a>
+</div>
+
 
 <script>
     const navBtn = document.querySelector('.projects');
