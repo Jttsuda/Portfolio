@@ -9,6 +9,10 @@
   --nav-text-hover: #909090;
   --nav-height: 70px;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 /*
 =================

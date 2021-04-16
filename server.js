@@ -19,8 +19,9 @@ app.use(express.urlencoded({ extended: true }));//Accepting Form Data
 // Routes
 app.get('/', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('about'));
-app.get('/projects', (req, res) => res.render('projects'));
 app.get('/contact', (req, res) => res.render('contact'));
+app.get('/projects', (req, res) => res.render('projects'));
+app.get('/tetris', (req, res) => res.render('tetris'));
 
 
 // 404 Page

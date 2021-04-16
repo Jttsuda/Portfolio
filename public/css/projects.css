@@ -9,32 +9,42 @@
   height: 300px;
   transition: all 1s;
   margin-top: 20px;
-  border: 5px solid black;
   border-radius: 4px;
 }
+.project-label-right:hover,
+.project-label-left:hover,
 .project-img:hover {
   opacity: 0.8;
 }
-.project-label-div {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(255, 255, 255, 1)),
-    to(rgba(0, 0, 0, 0))
-  );
-  text-align: center;
-  padding: 80px 30px;
-}
 
-/* Tetris */
-#tetris-label {
-  margin-left: 20px;
+/* Label Styles */
+.project-label {
+  text-align: center;
+  padding: 70px 40px;
+  transition: all 1s;
   max-width: 800px;
 }
-
-/* Snake */
-#snake-label {
+.project-label-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(0, 0, 0, 0)
+  );
+  margin-left: 20px;
+}
+.project-label-left {
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(0, 0, 0, 0)
+  );
   margin-right: 20px;
-  max-width: 700px;
+}
+.project-title {
+  transform: translateY(-20px);
+}
+.project-desc {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+    "Arial Narrow", Arial, sans-serif;
+  font-weight: 100;
 }
