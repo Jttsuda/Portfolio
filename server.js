@@ -22,6 +22,7 @@ app.get('/about', (req, res) => res.render('about'));
 app.get('/contact', (req, res) => res.render('contact'));
 app.get('/projects', (req, res) => res.render('projects'));
 app.get('/tetris', (req, res) => res.render('tetris'));
+app.get('/snake', (req, res) => res.render('snake'));
 
 
 // 404 Page

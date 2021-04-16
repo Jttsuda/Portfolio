@@ -9,6 +9,8 @@
   height: 300px;
   transition: all 1s;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   border-radius: 4px;
 }
 .project-label-right:hover,
@@ -20,14 +22,14 @@
 /* Label Styles */
 .project-label {
   text-align: center;
-  padding: 70px 40px;
+  padding: 70px 70px;
   transition: all 1s;
   max-width: 800px;
 }
 .project-label-right {
   background-image: linear-gradient(
     to right,
-    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.8),
     rgba(0, 0, 0, 0)
   );
   margin-left: 20px;
@@ -35,7 +37,7 @@
 .project-label-left {
   background-image: linear-gradient(
     to left,
-    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.8),
     rgba(0, 0, 0, 0)
   );
   margin-right: 20px;

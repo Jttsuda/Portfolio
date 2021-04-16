@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/css/tetris.css">
 <script src="/js/tetris.js" defer></script>
 
+
 <!-- Tetris Game HTML -->
 <div id="tetris-block">
     <div id="tetris-content">
@@ -9,11 +10,10 @@
             <h1 id="tetris-title">Tetris</h1>
             <h2 id="tetris-score">Score:<span id="score">0</span></h2>
         </div>
-
+        
         <div class="container">
             <!-- Grid Boxes -->
             <div class="grid">
-
                 <h1 id="game-over"></h1>
             </div>
             <div class="mini-grid">
@@ -21,6 +21,7 @@
             </div>
         </div>
         <div class="tetris-buttons">
+            <a href="https://github.com/Jttsuda/Tetris" target="_blank" id="tetris-github">Click here to see code</a>
             <button id="start-button">New Game</button>
             <button id="pause-button">||</button>
         </div>
@@ -32,5 +33,14 @@
     const navBtn = document.querySelector('.projects');
     navBtn.style.transition = 'color 0s';
     navBtn.style.color = 'var(--nav-text-hover)';
+    let blackOrWhite = localStorage.getItem('theme');
+    if (blackOrWhite === 'dark') {
+        const tetTitle = document.getElementById('tetris-title');
+        const tetScore = document.getElementById('tetris-score');
+        const tetUpNext = document.getElementById('up-next');
+        tetTitle.style.color = 'white';
+        tetScore.style.color = 'white';
+        tetUpNext.style.color = 'white';
+    }
 </script>
 <%- include('./partials/footer.ejs') %>

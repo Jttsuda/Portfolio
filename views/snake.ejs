@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/css/snake.css">
+<script src="/js/snake.js" defer></script>
+
+<!-- Snake Game HTML -->
+<div id="mstr-container">
+    <div id="snake-container">
+        <h1 id="snake-title">Snake</h1>
+        <h2 id="high-score">Personal Best:<span>0</span></h2>
+        <h2 id="snake-score">Length:<span>1</span></h2>
+        <button id="new-game-button">New Game</button>
+        <div id="snake-grid">
+            <h1 id="ate-yourself"></h1>
+        </div>
+        <a href="https://github.com/Jttsuda/Snake" target="_blank" id="snake-github">Click here to see code</a>
+    </div>
+</div>
+
+<script>
+    const navBtn = document.querySelector('.projects');
+    navBtn.style.transition = 'color 0s';
+    navBtn.style.color = 'var(--nav-text-hover)';
+    let blackOrWhite = localStorage.getItem('theme');
+        if (blackOrWhite === 'dark') {
+            const snakeTitle = document.getElementById('snake-title');
+            const highScore = document.getElementById('high-score');
+            const snakeScore = document.getElementById('snake-score');
+            snakeTitle.style.color = 'white';
+            highScore.style.color = 'white';
+            snakeScore.style.color = 'white';
+        }
+</script>
+<%- include('./partials/footer.ejs') %>
